@@ -4,17 +4,25 @@ with open('report_securify_nocolor.txt', 'r') as file:
 data = dataraw.split("\n\n")
 
 
+print("""
+\lstnewenvironment{tabularlstlisting}[1][]
+ {%
+  \lstset{aboveskip=-0.05ex,belowskip=-3.5ex,#1}%
+ }
+ {}
+ """)
+
 latexstr="""
 \\begin{{table}}[]
-\\hskip-1.0cm\\begin{{tabular}}{{|l|l|}}
+\\hskip-1.0cm\\begin{{tabular}}{{|l|m{{17cm}}|}}
 \\hline
 Severity    &  {}\\\\ \\hline
 Pattern     &  {}\\\\ \\hline
 Description &  {}\\\\ \\hline
 Code        &  
-\\begin{{lstlisting}}[language=Solidity]
+\\begin{{tabularlstlisting}}[language=Solidity]
 {}
-\\end{{lstlisting}}
+\\end{{tabularlstlisting}}
 \\\\ \\hline
 \\end{{tabular}}
 \\end{{table}}
